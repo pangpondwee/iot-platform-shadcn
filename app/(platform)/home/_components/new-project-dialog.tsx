@@ -21,8 +21,11 @@ export function NewProjectDialog() {
             <Plus />
             New project
           </Button>
-          <Button size="fab" className="fixed bottom-6 right-6 md:hidden">
-            <Plus />
+          <Button
+            size="fab"
+            className="fixed bottom-6 right-6 md:hidden shadow-lg"
+          >
+            <Plus width={28} height={28} />
           </Button>
         </div>
       </DialogTrigger>

@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-1 flex-col overflow-auto z-0">
+    <div className="flex flex-1 flex-col xl:overflow-auto z-0">
       <NavBar />
       <Header />
       {children}
