@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="flex flex-col p-6 gap-6">
       <div className="flex justify-between">
-        <div className="flex flex-1 gap-3 max-w-lg">
+        <div className="flex flex-1 gap-3 md:max-w-lg">
           <Input placeholder="Search by project name" />
           <SortDropDown />
         </div>
