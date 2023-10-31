@@ -9,7 +9,7 @@ const SvgPlus = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#fff"
+      stroke={props.color || "#ffffff"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.667}

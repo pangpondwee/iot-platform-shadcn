@@ -1,3 +1,4 @@
+import { MarkerPin01, User01 } from "@/app/_components/icons";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,30 +8,33 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
-export default function ProjectCard() {
+export default function ProjectCard({
+  title,
+  owner,
+  location,
+}: {
+  title: string;
+  owner: string;
+  location: string;
+}) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <CardTitle className="text-xl">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-2">
+            <User01 />
+            <span className="text-secondary-foreground">{owner}</span>
           </div>
-        </form>
+          <div className="flex gap-2">
+            <MarkerPin01 />
+            <span className="text-secondary-foreground">{location}</span>
+          </div>
+        </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
-      </CardFooter>
     </Card>
   );
 }

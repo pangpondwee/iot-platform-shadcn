@@ -9,14 +9,14 @@ const SvgSettings01 = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#667085"
+      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
       d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
     />
     <path
-      stroke="#667085"
+      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

@@ -3,6 +3,21 @@ import { Input } from "@/components/ui/input";
 import { SortDropDown } from "./_components/sort-dropdown";
 import { NewProjectDialog } from "./_components/new-project-dialog";
 
+const projectData = [
+  { title: "Dog track", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 2", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
+];
+
 export default function Home() {
   return (
     <main className="flex flex-col p-6 gap-6">
@@ -14,20 +29,14 @@ export default function Home() {
         <NewProjectDialog />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projectData.map((project) => (
+          <ProjectCard
+            key={project.title}
+            title={project.title}
+            owner={project.owner}
+            location={project.location}
+          />
+        ))}
       </div>
     </main>
   );

@@ -9,7 +9,7 @@ const SvgArchive = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="#667085"
+      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
