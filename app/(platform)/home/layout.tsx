@@ -7,8 +7,8 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-1 flex-col overflow-auto z-10">
-      {/* <NavBar /> bug*/}
+    <div className="flex flex-1 flex-col overflow-auto z-0">
+      <NavBar />
       <Header />
       {children}
     </div>

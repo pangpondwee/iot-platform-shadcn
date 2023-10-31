@@ -1,19 +1,12 @@
 import { Menu02 } from "@/app/_components/icons";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import SideBar from "./sidebar";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function HamburgerBar() {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger asChild>
         <Button variant="ghost" size="icon">
           <Menu02 />
         </Button>
