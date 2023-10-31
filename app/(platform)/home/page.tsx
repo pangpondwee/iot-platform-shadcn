@@ -20,6 +20,14 @@ export default function Home() {
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </div>
     </main>
   );
