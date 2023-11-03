@@ -12,14 +12,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function NewProjectDialog() {
+export function NewDeviceDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <div>
           <Button className="hidden gap-2 md:flex">
             <Plus />
-            New project
+            New device
           </Button>
           <Button
             size="fab"

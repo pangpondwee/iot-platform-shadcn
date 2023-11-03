@@ -2,8 +2,6 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { AvatarFallback } from "@radix-ui/react-avatar";
-import { Ghost, ImportIcon } from "lucide-react";
-import Image from "next/image";
 import {
   HomeLine,
   Modem01,
@@ -12,46 +10,74 @@ import {
   Users01,
   Settings01,
 } from "@/app/_components/icons";
+import Logo from "@/app/_components/logo";
+import Link from "next/link";
 
 const topItems = [
-  { label: "Home", icon: <HomeLine /> },
-  { label: "Devices", icon: <Modem01 /> },
-  { label: "Firmware", icon: <FolderCode /> },
+  { label: "Home", href: "/home", icon: <HomeLine /> },
+  { label: "Devices", href: "/devices", icon: <Modem01 /> },
+  { label: "Firmware", href: "firmware", icon: <FolderCode /> },
 ];
 const projectItems = ["Dog track", "Dog track 2", "Dog track 3"];
 const bottomItems = [
-  { label: "Account management", icon: <Users01 /> },
-  { label: "Archived projects", icon: <Archive /> },
-  { label: "Settings", icon: <Settings01 /> },
+  {
+    label: "Account management",
+    href: "account-management",
+    icon: <Users01 />,
+  },
+  {
+    label: "Archived projects",
+    href: "archived-projects",
+    icon: <Archive />,
+  },
+  { label: "Settings", href: "settings", icon: <Settings01 /> },
 ];
 
 export default function SideBar() {
   return (
-    <nav className="flex flex-col w-full h-full gap-6">
+    <nav className="flex h-full w-full flex-col gap-6">
       <div className="pl-6 pr-6">
-        <Image src="/logo.svg" width={142} height={32} alt="logo" />
+        <Logo />
       </div>
-      <div className="flex flex-col gap-6 h-full self-stretch">
-        <div className="flex flex-col pl-4 pr-4 pb-6 gap-1 self-stretch border-b">
+      <div className="flex h-full flex-col gap-6 self-stretch">
+        <div className="flex flex-col gap-1 self-stretch border-b pb-6 pl-4 pr-4">
           {topItems.map((item) => (
-            <NavItem label={item.label} icon={item.icon} key={item.label} />
+            <NavItem
+              href={item.href}
+              label={item.label}
+              icon={item.icon}
+              key={item.label}
+            />
           ))}
         </div>
-        <div className="flex flex-col pl-4 pr-4 gap-1 ">
+        <div className="flex flex-col gap-1 pl-4 pr-4 ">
           {projectItems.map((item) => (
-            <NavItem label={item} icon={<HomeLine />} key={item} />
+            <NavItem
+              href={"/project"}
+              label={item}
+              icon={<HomeLine />}
+              key={item}
+            />
           ))}
         </div>
       </div>
       <div className="flex flex-col gap-6 pb-6">
-        <div className="flex flex-col pt-6 pl-4 pr-4 gap-1 self-stretch border-t">
+        <div className="flex flex-col gap-1 self-stretch border-t pl-4 pr-4 pt-6">
           {bottomItems.map((item) => (
-            <NavItem label={item.label} icon={item.icon} key={item.label} />
+            <NavItem
+              href={item.href}
+              label={item.label}
+              icon={item.icon}
+              key={item.label}
+            />
           ))}
         </div>
-        <div className="flex items-center pt-6 pl-4 pr-4 gap-4 border-t">
+        <div className="flex items-center gap-4 border-t pl-4 pr-4 pt-6">
           <Avatar>
-            <AvatarImage src="https://knotch.com/wp-content/uploads/2023/03/Image.png" />
+            <AvatarImage
+              src="https://knotch.com/wp-content/uploads/2023/03/Image.png"
+              alt="profile"
+            />
             <AvatarFallback>OR</AvatarFallback>
           </Avatar>
           <div className="flex flex-col">
@@ -67,21 +93,23 @@ export default function SideBar() {
 type NavItemProps = {
   label: string;
   icon: React.ReactNode;
-  active?: boolean;
+  href: string;
 };
 
-function NavItem({ label, icon, active = false }: NavItemProps) {
+function NavItem({ label, icon, href }: NavItemProps) {
   return (
     <Button
       variant="ghost"
-      className="flex flex-1 px-3 py-2 rounded-md justify-start items-center gap-2"
+      className="flex flex-1 items-center justify-start gap-2 rounded-md px-3 py-2 text-muted-foreground"
+      asChild
     >
-      <div className="flex flex-1 justify-start items-center gap-3">
+      <Link
+        href={href}
+        className="flex flex-1 items-center justify-start gap-3"
+      >
         {icon}
-        <div className="text-base font-semibold text-secondary-foreground">
-          {label}
-        </div>
-      </div>
+        <div className="text-base font-semibold">{label}</div>
+      </Link>
     </Button>
   );
 }

@@ -20,7 +20,7 @@ const projectData = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col p-6 gap-6">
+    <main className="flex flex-col gap-6 p-6">
       <div className="flex justify-between">
         <div className="flex flex-1 gap-3 md:max-w-lg">
           <Input placeholder="Search by project name" />
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         <NewProjectDialog />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projectData.map((project) => (
           <ProjectCard
             key={project.title}

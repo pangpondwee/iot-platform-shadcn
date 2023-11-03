@@ -1,15 +1,17 @@
 import Header from "../_components/header";
-import NavBar from "../_components/navbar";
 
-interface LayoutProps {
+type LayoutProps = {
   children: React.ReactNode;
-}
+};
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-1 flex-col xl:overflow-auto z-0">
-      <NavBar />
-      <Header />
+    <div className="z-0 flex flex-1 flex-col xl:overflow-auto">
+      <Header>
+        <h1 className="text-xl font-semibold sm:text-3xl">
+          Welcome, Olivia Rhye
+        </h1>
+      </Header>
       {children}
     </div>
   );

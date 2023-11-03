@@ -7,10 +7,10 @@ const SvgMarkerPin01 = (props: SVGProps<SVGSVGElement>) => (
     height={props.height || 24}
     viewBox="0 0 24 24"
     fill="none"
+    stroke="currentColor"
     {...props}
   >
     <g
-      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

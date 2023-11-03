@@ -4,65 +4,75 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #101828;
-
-    --card: #ffffff;
-    --card-foreground: #101828;
-
-    --popover: #ffffff;
-    --popover-foreground: #101828;
-
-    --primary: #7f56d9;
-    --primary-foreground: #ffffff;
-
-    --secondary: #f5f7f9;
-    --secondary-foreground: #344054;
-
-    --muted: #f5f7f9;
-    --muted-foreground: #667085;
-
-    --accent: #f2f4f7;
-    --accent-foreground: #1e1d1f;
-
-    --destructive: #d92d20;
-    --destructive-foreground: #f6f8fa;
-
-    --border: #eaecf0;
-    --input: #d0d5dd;
-    --ring: #d6bbfb;
-
+    /* Default background color of <body />...etc */
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    /* Background color for <Card /> */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    /* Background color for popovers such as <DropdownMenu />, <HoverCard />, <Popover /> */
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    /* Primary colors for <Button /> */
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    /* Secondary colors for <Button /> */
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    /* Muted backgrounds such as <TabsList />, <Skeleton /> and <Switch /> */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    /* Used for accents such as hover effects on <DropdownMenuItem>, <SelectItem>...etc */
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    /* Used for destructive actions such as <Button variant="destructive"> */
+    --destructive: 4, 74%, 49%;
+    --destructive-foreground: 210 20% 98%;
+    /* Default border color */
+    --border: 220 13% 91%;
+    /* Border color for inputs such as <Input />, <Select />, <Textarea /> */
+    --input: 220 13% 91%;
+    /* Used for focus ring */
+    --ring: 262.1 83.3% 57.8%;
+    /* Border radius for card, input and buttons */
     --radius: 0.5rem;
+    /* Additional colors */
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
   }
 
   .dark {
-    --background: #0c111d;
-    --foreground: #f5f5f6;
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
 
-    --card: #161b26;
-    --card-foreground: #f5f5f6;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: #161b26;
-    --popover-foreground: #f5f5f6;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: #7f56d9;
-    --primary-foreground: #f5f5f6;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: #2f2d30;
-    --secondary-foreground: #cecfd2;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: #2f2d30;
-    --muted-foreground: #85888e;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: #1f242f;
-    --accent-foreground: #f5f5f6;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
 
-    --destructive: #f04438;
-    --destructive-foreground: #f5f5f6;
+    --destructive: 4, 92%, 69%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: #333741;
-    --input: #333741;
-    --ring: #6941c6;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+
+    --warning: 48 96% 89%;
+    --warning-foreground: 38 92% 50%;
   }
 }
 

@@ -7,17 +7,16 @@ const SvgSettings01 = (props: SVGProps<SVGSVGElement>) => (
     height={props.height || 24}
     viewBox="0 0 24 24"
     fill="none"
+    stroke="currentColor"
     {...props}
   >
     <path
-      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
       d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
     />
     <path
-      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

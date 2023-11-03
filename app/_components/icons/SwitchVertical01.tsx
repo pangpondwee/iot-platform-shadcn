@@ -7,10 +7,10 @@ const SvgSwitchVertical01 = (props: SVGProps<SVGSVGElement>) => (
     height={props.height || 20}
     viewBox="0 0 20 20"
     fill="none"
+    stroke="currentColor"
     {...props}
   >
     <path
-      stroke={props.color || "#475467"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.667}

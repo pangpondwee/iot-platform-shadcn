@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import SideBar from "./_components/sidebar";
+import NavBar from "./_components/navbar";
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,10 +9,13 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex h-screen">
-      <div className="w-72 pt-8 hidden border-r xl:flex">
+      <div className="hidden w-72 border-r pt-8 xl:flex">
         <SideBar />
       </div>
-      <main className="flex flex-1 flex-col">{children}</main>
+      <main className="flex flex-1 flex-col">
+        <NavBar />
+        {children}
+      </main>
     </div>
   );
 }

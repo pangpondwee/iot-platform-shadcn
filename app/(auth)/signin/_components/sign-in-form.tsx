@@ -50,7 +50,7 @@ export default function SignInForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="flex flex-1 flex-col gap-1.5 self-stretch">
+            <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input type="email" placeholder="Enter your email" {...field} />
@@ -63,7 +63,7 @@ export default function SignInForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem className="flex flex-1 flex-col gap-1.5 self-stretch">
+            <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input

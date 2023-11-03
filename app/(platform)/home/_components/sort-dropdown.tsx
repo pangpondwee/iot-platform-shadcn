@@ -19,7 +19,7 @@ export function SortDropDown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div>
-          <Button className="hidden sm:flex gap-2" variant="outline">
+          <Button className="hidden gap-2 sm:flex" variant="outline">
             <SwitchVertical01 />
             Sort
             <ChevronDown />
