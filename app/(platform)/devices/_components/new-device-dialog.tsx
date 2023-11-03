@@ -23,7 +23,7 @@ export function NewDeviceDialog() {
           </Button>
           <Button
             size="fab"
-            className="fixed bottom-6 right-6 shadow-lg md:hidden"
+            className="fixed bottom-6 right-6 z-10 shadow-lg md:hidden"
           >
             <Plus width={28} height={28} />
           </Button>

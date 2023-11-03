@@ -56,13 +56,13 @@ const invoices = [
 
 export default function Devices() {
   return (
-    <main className="p-6 pb-24 md:pb-6">
+    <main className="p-6 pb-24 xl:pb-6">
       <div className="overflow-hidden rounded-lg border">
         <div className="border-b p-3">
           <Input placeholder="Search by device name" />
         </div>
         <Table>
-          <TableHeader className="bg-muted">
+          <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Invoice</TableHead>
               <TableHead>Status</TableHead>

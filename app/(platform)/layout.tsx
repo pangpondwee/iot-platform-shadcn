@@ -8,7 +8,7 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex h-screen">
+    <div className="flex xl:h-screen">
       <div className="hidden w-72 border-r pt-8 xl:flex">
         <SideBar />
       </div>

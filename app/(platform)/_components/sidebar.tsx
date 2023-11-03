@@ -33,7 +33,11 @@ const bottomItems = [
   { label: "Settings", href: "settings", icon: <Settings01 /> },
 ];
 
-export default function SideBar() {
+type SideBarProps = {
+  handleClickLink?: () => void;
+};
+
+export default function SideBar({ handleClickLink }: SideBarProps) {
   return (
     <nav className="flex h-full w-full flex-col gap-6">
       <div className="pl-6 pr-6">
@@ -47,6 +51,7 @@ export default function SideBar() {
               label={item.label}
               icon={item.icon}
               key={item.label}
+              onClick={handleClickLink}
             />
           ))}
         </div>
@@ -57,6 +62,7 @@ export default function SideBar() {
               label={item}
               icon={<HomeLine />}
               key={item}
+              onClick={handleClickLink}
             />
           ))}
         </div>
@@ -69,6 +75,7 @@ export default function SideBar() {
               label={item.label}
               icon={item.icon}
               key={item.label}
+              onClick={handleClickLink}
             />
           ))}
         </div>
@@ -82,7 +89,7 @@ export default function SideBar() {
           </Avatar>
           <div className="flex flex-col">
             <p className="text-sm font-semibold">Olivia Rhye</p>
-            <p className="text-sm text-secondary-foreground">Admin</p>
+            <p className="text-sm text-muted-foreground">Admin</p>
           </div>
         </div>
       </div>
@@ -94,13 +101,15 @@ type NavItemProps = {
   label: string;
   icon: React.ReactNode;
   href: string;
+  onClick?: () => void;
 };
 
-function NavItem({ label, icon, href }: NavItemProps) {
+function NavItem({ label, icon, href, onClick }: NavItemProps) {
   return (
     <Button
       variant="ghost"
       className="flex flex-1 items-center justify-start gap-2 rounded-md px-3 py-2 text-muted-foreground"
+      onClick={onClick}
       asChild
     >
       <Link
