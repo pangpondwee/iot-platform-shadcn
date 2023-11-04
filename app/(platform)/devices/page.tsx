@@ -1,13 +1,13 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
+import { ActionDropDown } from "./_components/action-dropdown";
 
 const invoices = [
   {
@@ -68,6 +68,7 @@ export default function Devices() {
               <TableHead>Status</TableHead>
               <TableHead>Method</TableHead>
               <TableHead className="text-right">Amount</TableHead>
+              <TableHead />
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -78,6 +79,9 @@ export default function Devices() {
                 <TableCell>{invoice.paymentMethod}</TableCell>
                 <TableCell className="text-right">
                   {invoice.totalAmount}
+                </TableCell>
+                <TableCell className="text-right">
+                  <ActionDropDown />
                 </TableCell>
               </TableRow>
             ))}

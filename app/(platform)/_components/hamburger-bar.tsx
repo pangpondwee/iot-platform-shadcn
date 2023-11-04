@@ -1,9 +1,9 @@
 "use client";
-import { Menu02 } from "@/app/_components/icons";
 import { Button } from "@/components/ui/button";
 import SideBar from "./sidebar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import { Menu } from "lucide-react";
 
 export default function HamburgerBar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function HamburgerBar() {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon">
-          <Menu02 />
+          <Menu />
         </Button>
       </SheetTrigger>
       <SheetContent className="h-screen w-80" side="left">

@@ -1,4 +1,3 @@
-import { Plus } from "@/app/_components/icons";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { PlusIcon } from "lucide-react";
 
 export function NewDeviceDialog() {
   return (
@@ -18,14 +18,14 @@ export function NewDeviceDialog() {
       <DialogTrigger asChild>
         <div>
           <Button className="hidden gap-2 md:flex">
-            <Plus />
+            <PlusIcon width={20} height={20} />
             New device
           </Button>
           <Button
             size="fab"
             className="fixed bottom-6 right-6 z-10 shadow-lg md:hidden"
           >
-            <Plus width={28} height={28} />
+            <PlusIcon width={28} height={28} />
           </Button>
         </div>
       </DialogTrigger>

@@ -2,35 +2,36 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { AvatarFallback } from "@radix-ui/react-avatar";
-import {
-  HomeLine,
-  Modem01,
-  FolderCode,
-  Archive,
-  Users01,
-  Settings01,
-} from "@/app/_components/icons";
 import Logo from "@/app/_components/logo";
 import Link from "next/link";
+import {
+  ArchiveIcon,
+  FileCode,
+  Home,
+  HomeIcon,
+  Router,
+  Settings,
+  Users,
+} from "lucide-react";
 
 const topItems = [
-  { label: "Home", href: "/home", icon: <HomeLine /> },
-  { label: "Devices", href: "/devices", icon: <Modem01 /> },
-  { label: "Firmware", href: "firmware", icon: <FolderCode /> },
+  { label: "Home", href: "/home", icon: <Home /> },
+  { label: "Devices", href: "/devices", icon: <Router /> },
+  { label: "Firmware", href: "firmware", icon: <FileCode /> },
 ];
 const projectItems = ["Dog track", "Dog track 2", "Dog track 3"];
 const bottomItems = [
   {
     label: "Account management",
     href: "account-management",
-    icon: <Users01 />,
+    icon: <Users />,
   },
   {
     label: "Archived projects",
     href: "archived-projects",
-    icon: <Archive />,
+    icon: <ArchiveIcon />,
   },
-  { label: "Settings", href: "settings", icon: <Settings01 /> },
+  { label: "Settings", href: "settings", icon: <Settings /> },
 ];
 
 type SideBarProps = {
@@ -60,7 +61,7 @@ export default function SideBar({ handleClickLink }: SideBarProps) {
             <NavItem
               href={"/project"}
               label={item}
-              icon={<HomeLine />}
+              icon={<HomeIcon />}
               key={item}
               onClick={handleClickLink}
             />

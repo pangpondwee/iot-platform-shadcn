@@ -1,15 +1,13 @@
 "use client";
-import { ChevronDown, SwitchVertical01 } from "@/app/_components/icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ArrowUpDown, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export function SortDropDown() {
@@ -20,12 +18,12 @@ export function SortDropDown() {
       <DropdownMenuTrigger asChild>
         <div>
           <Button className="hidden gap-2 sm:flex" variant="outline">
-            <SwitchVertical01 />
+            <ArrowUpDown width={20} height={20} />
             Sort
-            <ChevronDown />
+            <ChevronDown width={20} height={20} />
           </Button>
           <Button className="sm:hidden" variant="outline" size="icon">
-            <SwitchVertical01 />
+            <ArrowUpDown width={20} height={20} />
           </Button>
         </div>
       </DropdownMenuTrigger>
