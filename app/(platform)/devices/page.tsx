@@ -6,8 +6,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
+import { Input, SearchInput } from "@/components/ui/input";
 import { ActionDropDown } from "./_components/action-dropdown";
+import { DeviceTypeDropDown } from "./_components/device-type-dropdown";
 
 const invoices = [
   {
@@ -58,11 +59,15 @@ export default function Devices() {
   return (
     <main className="p-6 pb-24 md:pb-6">
       <div className="overflow-hidden rounded-lg border">
-        <div className="border-b p-3">
-          <Input placeholder="Search by device name" />
+        <div className="flex flex-1 justify-between gap-3 border-b p-3">
+          <DeviceTypeDropDown />
+          <SearchInput
+            className="sm:w-[400px]"
+            placeholder="Search by device name"
+          />
         </div>
         <Table>
-          <TableHeader className="bg-muted">
+          <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Invoice</TableHead>
               <TableHead>Status</TableHead>

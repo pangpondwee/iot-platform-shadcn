@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold">Devices</h1>
           <p className="text-base text-muted-foreground">
-            View and manage all devices in this platform.
+            View and organize all your connected devices in one place.
           </p>
         </div>
         <NewDeviceDialog />

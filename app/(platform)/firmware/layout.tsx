@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold">Firmware</h1>
           <p className="text-base text-muted-foreground">
-            Manage all firmware in this platform here.
+            Manage all firmware in this platform.
           </p>
         </div>
       </Header>

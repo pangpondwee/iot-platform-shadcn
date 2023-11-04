@@ -11,15 +11,24 @@ import { ArrowUpDown, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export function SortDropDown() {
+  const options = [
+    { label: "A to Z", value: "ascending" },
+    { label: "Z to A", value: "descending" },
+    { label: "Newest", value: "newest" },
+    { label: "Oldest", value: "oldest" },
+  ];
   const [sort, setSort] = useState("ascending");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div>
-          <Button className="hidden gap-2 sm:flex" variant="outline">
+          <Button
+            className="hidden w-36 justify-between gap-2 sm:flex"
+            variant="outline"
+          >
             <ArrowUpDown width={20} height={20} />
-            Sort
+            {options.find((option) => option.value === sort)?.label}
             <ChevronDown width={20} height={20} />
           </Button>
           <Button className="sm:hidden" variant="outline" size="icon">
@@ -29,18 +38,11 @@ export function SortDropDown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup value={sort} onValueChange={setSort}>
-          <DropdownMenuRadioItem value="ascending">
-            A to Z
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="descending">
-            Z to A
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="newest">
-            Newest to oldest
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="oldest">
-            Oldest to newest
-          </DropdownMenuRadioItem>
+          {options.map((option) => (
+            <DropdownMenuRadioItem key={option.value} value={option.value}>
+              {option.label}
+            </DropdownMenuRadioItem>
+          ))}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
