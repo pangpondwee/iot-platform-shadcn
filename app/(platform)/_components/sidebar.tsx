@@ -1,8 +1,7 @@
 "use client";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { AvatarFallback } from "@radix-ui/react-avatar";
-import Logo from "@/app/_components/logo";
+import Logo from "@/components/logo";
 import Link from "next/link";
 import {
   ArchiveIcon,
@@ -118,7 +117,7 @@ function NavItem({ label, icon, href, onClick }: NavItemProps) {
         className="flex flex-1 items-center justify-start gap-3"
       >
         {icon}
-        <div className="text-base font-semibold">{label}</div>
+        <div className="text-base font-medium">{label}</div>
       </Link>
     </Button>
   );

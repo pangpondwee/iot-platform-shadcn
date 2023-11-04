@@ -1,6 +1,6 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import HamburgerBar from "./hamburger-bar";
-import Logo from "@/app/_components/logo";
+import Logo from "@/components/logo";
 
 export default function NavBar() {
   return (

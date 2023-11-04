@@ -16,7 +16,7 @@ export function ActionDropDown() {
           <MoreVertical width={20} height={20} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-56">
         <DropdownMenuItem className="gap-2 font-medium">
           <Pencil width={16} height={16} />
           Edit

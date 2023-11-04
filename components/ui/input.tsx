@@ -34,7 +34,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, InputProps>(
           className,
         )}
       >
-        <SearchIcon className="h-5 w-5 text-muted-foreground" />
+        <SearchIcon className="h-5 w-5" />
         <input
           {...props}
           type="search"

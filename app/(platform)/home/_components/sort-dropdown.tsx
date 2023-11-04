@@ -27,8 +27,10 @@ export function SortDropDown() {
             className="hidden w-36 justify-between gap-2 sm:flex"
             variant="outline"
           >
-            <ArrowUpDown width={20} height={20} />
-            {options.find((option) => option.value === sort)?.label}
+            <div className="flex gap-2">
+              <ArrowUpDown width={20} height={20} />
+              {options.find((option) => option.value === sort)?.label}
+            </div>
             <ChevronDown width={20} height={20} />
           </Button>
           <Button className="sm:hidden" variant="outline" size="icon">

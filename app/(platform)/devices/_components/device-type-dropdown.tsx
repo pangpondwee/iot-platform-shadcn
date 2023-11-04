@@ -26,7 +26,7 @@ export function DeviceTypeDropDown() {
           <ChevronDown width={20} height={20} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup
           value={deviceType}
           onValueChange={setDeviceType}

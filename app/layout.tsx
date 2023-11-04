@@ -4,6 +4,7 @@ import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import QueryClientProvider from "@/components/query-client-provider";
 
 const instrument_sans = Instrument_Sans({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -27,7 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <QueryClientProvider>{children}</QueryClientProvider>
           <Toaster />
         </ThemeProvider>
       </body>

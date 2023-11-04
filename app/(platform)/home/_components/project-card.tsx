@@ -22,10 +22,10 @@ export default function ProjectCard({
         <CardContent>
           <div className="flex flex-col gap-4 text-muted-foreground">
             <div className="flex gap-2">
-              <Skeleton className="h-5 w-60 rounded-full" />
+              <Skeleton className="h-6 w-60 rounded-full" />
             </div>
             <div className="flex gap-2">
-              <Skeleton className="h-5 w-60 rounded-full" />
+              <Skeleton className="h-6 w-60 rounded-full" />
             </div>
           </div>
         </CardContent>
