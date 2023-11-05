@@ -1,0 +1,2 @@
+- Fix bug NextTheme
+- Fix warning geist variable
