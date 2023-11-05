@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className={inter.className}>
+      <body className="font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
