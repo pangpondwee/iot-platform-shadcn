@@ -38,7 +38,7 @@ export function SortDropDown() {
           </Button>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent>
         <DropdownMenuRadioGroup value={sort} onValueChange={setSort}>
           {options.map((option) => (
             <DropdownMenuRadioItem key={option.value} value={option.value}>
