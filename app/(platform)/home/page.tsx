@@ -2,31 +2,16 @@
 import ProjectCard from "./_components/project-card";
 import { SearchInput } from "@/components/ui/input";
 import { SortDropDown } from "./_components/sort-dropdown";
-import { useState } from "react";
-
-const skeletonCount = 9;
-const loadingSkeletons = Array.from(
-  { length: skeletonCount },
-  (_, index) => index + 1,
-);
-
-const projectData = [
-  { title: "Dog track", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 2", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-  { title: "Dog track 3", owner: "Olivia Rhye", location: "New York" },
-];
+import { Suspense } from "react";
+import LoadingSkeleton from "./_components/loading-skeleton";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { fetchProject } from "@/app/_api/fetchProject";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const { data: projectData } = useSuspenseQuery({
+    queryKey: ["projectData"],
+    queryFn: fetchProject,
+  });
   return (
     <main className="flex flex-col gap-6 p-6">
       <div className="flex justify-between gap-3">
@@ -37,18 +22,18 @@ export default function Home() {
         <SortDropDown />
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {loading
-          ? loadingSkeletons.map((skeletonKey) => (
-              <ProjectCard key={skeletonKey} loading={loading} />
-            ))
-          : projectData.map((project) => (
+        <Suspense fallback={<LoadingSkeleton />}>
+          {projectData?.map(
+            (project: { name: string; owner: string; location: string }) => (
               <ProjectCard
-                key={project.title}
-                title={project.title}
+                key={project.name}
+                title={project.name}
                 owner={project.owner}
                 location={project.location}
               />
-            ))}
+            ),
+          )}
+        </Suspense>
       </div>
     </main>
   );
