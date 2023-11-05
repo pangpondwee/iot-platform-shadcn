@@ -45,16 +45,14 @@ export default function ProjectCardContainer() {
   });
   return (
     <>
-      {(projectData as project[]).map(
-        (project: { name: string; owner: string; location: string }) => (
-          <ProjectCard
-            key={project.name}
-            title={project.name}
-            owner={project.owner}
-            location={project.location}
-          />
-        ),
-      )}
+      {(projectData as project[]).map((project) => (
+        <ProjectCard
+          key={project._id}
+          title={project.name}
+          owner={project.owner}
+          location={project.location}
+        />
+      ))}
     </>
   );
 }
