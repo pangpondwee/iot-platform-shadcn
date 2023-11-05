@@ -42,7 +42,7 @@ export default function Home() {
     queryFn: fetchProject,
   });
   return (
-    <main className="flex flex-col gap-6 p-6">
+    <main className="flex flex-col gap-4 p-4 sm:gap-6 sm:p-6">
       <div className="flex justify-between gap-3">
         <SearchInput
           className="sm:w-[400px]"
@@ -50,7 +50,7 @@ export default function Home() {
         />
         <SortDropDown />
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
         {(projectData as project[]).map((project) => (
           <ProjectCard
             key={project._id}
