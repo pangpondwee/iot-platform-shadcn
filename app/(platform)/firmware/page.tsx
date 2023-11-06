@@ -52,6 +52,24 @@ const invoices = [
     totalAmount: "$300.00",
     paymentMethod: "Credit Card",
   },
+  {
+    invoice: "INV008",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV009",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV010",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
 ];
 
 export default function Devices() {
