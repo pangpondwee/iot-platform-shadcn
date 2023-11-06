@@ -9,7 +9,7 @@ const loadingSkeletons = Array.from(
 
 export default function Loading() {
   return (
-    <main className="flex flex-col gap-4 p-4 sm:gap-6 sm:p-6">
+    <>
       <div className="flex justify-between gap-3">
         <Skeleton
           className="h-10 w-full sm:w-[400px]"
@@ -22,6 +22,6 @@ export default function Loading() {
           <ProjectCard key={skeleton} loading={true} />
         ))}
       </div>
-    </main>
+    </>
   );
 }

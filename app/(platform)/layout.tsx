@@ -12,10 +12,12 @@ export default function Layout({ children }: LayoutProps) {
       <div className="hidden w-72 border-r pt-8 xl:flex">
         <SideBar />
       </div>
-      <main className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col">
         <NavBar />
-        {children}
-      </main>
+        <div className="z-0 flex flex-1 flex-col xl:overflow-auto">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

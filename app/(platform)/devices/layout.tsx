@@ -1,5 +1,10 @@
-import Header from "../../../components/organisms/header";
-import { NewDeviceDialog } from "../../../components/dialogs/new-device-dialog";
+import MainContainer from "@/components/templates/main-container";
+import Header, {
+  HeaderContent,
+  HeaderDescription,
+  HeaderTitle,
+} from "../../../components/molecules/header";
+import { NewDeviceDialog } from "../../../components/organisms/dialogs/new-device-dialog";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -7,17 +12,19 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="z-0 flex flex-1 flex-col xl:overflow-auto">
+    <>
       <Header>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-semibold">Devices</h1>
-          <p className="text-base text-muted-foreground">
+        <HeaderContent>
+          <HeaderTitle>Devices</HeaderTitle>
+          <HeaderDescription>
             View and organize all your connected devices in one place.
-          </p>
-        </div>
+          </HeaderDescription>
+        </HeaderContent>
         <NewDeviceDialog />
       </Header>
-      {children}
-    </div>
+      <MainContainer className="max-w-full overflow-auto">
+        {children}
+      </MainContainer>
+    </>
   );
 }

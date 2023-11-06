@@ -1,2 +1,3 @@
 - Fix bug NextTheme https://github.com/shadcn-ui/ui/issues/1858
 - Fix warning geist variable
+- Fix table overflow in mobile

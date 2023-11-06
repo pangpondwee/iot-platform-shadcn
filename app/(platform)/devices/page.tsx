@@ -7,8 +7,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Input, SearchInput } from "@/components/ui/input";
-import { ActionDropDown } from "../../../components/molecules/device-action-dropdown";
-import { DeviceTypeDropDown } from "../../../components/molecules/device-type-dropdown";
+import { ActionDropDown } from "../../../components/molecules/dropdowns/device-action-dropdown";
+import { DeviceTypeDropDown } from "../../../components/molecules/dropdowns/device-type-dropdown";
 
 const invoices = [
   {
@@ -57,42 +57,40 @@ const invoices = [
 
 export default function Devices() {
   return (
-    <main className="p-6 pb-24 md:pb-6">
-      <div className="overflow-hidden rounded-lg border">
-        <div className="flex flex-1 justify-between gap-3 border-b p-3">
-          <DeviceTypeDropDown />
-          <SearchInput
-            className="sm:w-[400px]"
-            placeholder="Search by device name"
-          />
-        </div>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Invoice</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Method</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-              <TableHead />
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {invoices.map((invoice) => (
-              <TableRow key={invoice.invoice}>
-                <TableCell className="font-medium">{invoice.invoice}</TableCell>
-                <TableCell>{invoice.paymentStatus}</TableCell>
-                <TableCell>{invoice.paymentMethod}</TableCell>
-                <TableCell className="text-right">
-                  {invoice.totalAmount}
-                </TableCell>
-                <TableCell className="text-right">
-                  <ActionDropDown />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+    <div className="overflow-hidden rounded-lg border">
+      <div className="flex flex-1 justify-between gap-3 border-b p-3">
+        <DeviceTypeDropDown />
+        <SearchInput
+          className="sm:w-[400px]"
+          placeholder="Search by device name"
+        />
       </div>
-    </main>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Invoice</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Method</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
+            <TableHead />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {invoices.map((invoice) => (
+            <TableRow key={invoice.invoice}>
+              <TableCell className="font-medium">{invoice.invoice}</TableCell>
+              <TableCell>{invoice.paymentStatus}</TableCell>
+              <TableCell>{invoice.paymentMethod}</TableCell>
+              <TableCell className="text-right">
+                {invoice.totalAmount}
+              </TableCell>
+              <TableCell className="text-right">
+                <ActionDropDown />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export default function Home() {
     queryFn: mockApi,
   });
   return (
-    <main className="flex flex-col gap-4 p-4 sm:gap-6 sm:p-6">
+    <>
       <div className="flex justify-between gap-3">
         <SearchInput
           className="sm:w-[400px]"
@@ -37,6 +37,6 @@ export default function Home() {
           />
         ))}
       </div>
-    </main>
+    </>
   );
 }

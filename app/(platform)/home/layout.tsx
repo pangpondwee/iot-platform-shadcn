@@ -1,7 +1,12 @@
 import { Suspense } from "react";
-import Header from "../../../components/organisms/header";
-import { NewProjectDialog } from "../../../components/dialogs/new-project-dialog";
+import Header, {
+  HeaderContent,
+  HeaderDescription,
+  HeaderTitle,
+} from "../../../components/molecules/header";
+import { NewProjectDialog } from "../../../components/organisms/dialogs/new-project-dialog";
 import Loading from "./loading";
+import MainContainer from "@/components/templates/main-container";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -9,17 +14,17 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="z-0 flex flex-1 flex-col xl:overflow-auto">
+    <>
       <Header>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-semibold">Welcome back, Olivia Rhye!</h1>
-          <p className="text-base text-muted-foreground">
-            Here's your active projects.
-          </p>
-        </div>
+        <HeaderContent>
+          <HeaderTitle>Welcome back, Olivia Rhye!</HeaderTitle>
+          <HeaderDescription>Here's your active projects.</HeaderDescription>
+        </HeaderContent>
         <NewProjectDialog />
       </Header>
-      <Suspense fallback={<Loading />}>{children}</Suspense>
-    </div>
+      <Suspense fallback={<Loading />}>
+        <MainContainer>{children}</MainContainer>
+      </Suspense>
+    </>
   );
 }
