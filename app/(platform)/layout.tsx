@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import SideBar from "../../components/organisms/sidebar";
+import NavContent from "../../components/organisms/nav-content";
 import NavBar from "../../components/organisms/navbar";
 
 type LayoutProps = {
@@ -9,12 +9,13 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex xl:h-screen">
-      <div className="hidden w-72 border-r pt-8 xl:flex">
-        <SideBar />
-      </div>
+      {/* Sidebar */}
+      <nav className="hidden w-72 border-r pb-6 pt-8 xl:flex">
+        <NavContent />
+      </nav>
       <div className="flex flex-1 flex-col">
         <NavBar />
-        <div className="z-0 flex flex-1 flex-col xl:overflow-auto">
+        <div className="max-w-screen flex flex-1 flex-col xl:overflow-y-auto">
           {children}
         </div>
       </div>

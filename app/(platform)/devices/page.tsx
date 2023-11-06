@@ -57,7 +57,7 @@ const invoices = [
 
 export default function Devices() {
   return (
-    <div className="overflow-hidden rounded-lg border">
+    <div className="rounded-lg border">
       <div className="flex flex-1 justify-between gap-3 border-b p-3">
         <DeviceTypeDropDown />
         <SearchInput

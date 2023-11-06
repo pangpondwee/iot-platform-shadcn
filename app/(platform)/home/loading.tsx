@@ -15,7 +15,7 @@ export default function Loading() {
           className="h-10 w-full sm:w-[400px]"
           placeholder="Search by project name"
         />
-        <Skeleton className="h-10 w-10 sm:w-36" />
+        <Skeleton className="h-10 w-10 flex-shrink-0 sm:w-36" />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
         {loadingSkeletons.map((skeleton) => (

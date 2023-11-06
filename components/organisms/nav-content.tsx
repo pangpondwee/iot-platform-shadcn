@@ -12,13 +12,24 @@ import {
   Settings,
   Users,
 } from "lucide-react";
+import { Separator } from "../ui/separator";
+import { ScrollArea } from "../ui/scroll-area";
 
 const topItems = [
   { label: "Home", href: "/home", icon: <Home /> },
   { label: "Devices", href: "/devices", icon: <Router /> },
   { label: "Firmware", href: "firmware", icon: <FileCode /> },
 ];
-const projectItems = ["Dog track", "Dog track 2", "Dog track 3"];
+const projectItems = [
+  "Dog track",
+  "Dog track 2",
+  "Dog track 3",
+  "Dog track 4",
+  "Dog track 5",
+  "Dog track 6",
+  "Dog track 7",
+  "Dog track 8",
+];
 const bottomItems = [
   {
     label: "Account management",
@@ -37,14 +48,14 @@ type SideBarProps = {
   handleClickLink?: () => void;
 };
 
-export default function SideBar({ handleClickLink }: SideBarProps) {
+export default function NavContent({ handleClickLink }: SideBarProps) {
   return (
-    <nav className="flex h-full w-full flex-col gap-6">
+    <div className="flex h-full flex-1 flex-col gap-6">
       <div className="pl-6 pr-6">
         <Logo />
       </div>
-      <div className="flex h-full flex-col gap-6 self-stretch">
-        <div className="flex flex-col gap-1 self-stretch border-b pb-6 pl-4 pr-4">
+      <div className="flex h-full flex-1 flex-col gap-6 overflow-hidden">
+        <div className="flex flex-col gap-1 pl-4 pr-4">
           {topItems.map((item) => (
             <NavItem
               href={item.href}
@@ -55,20 +66,24 @@ export default function SideBar({ handleClickLink }: SideBarProps) {
             />
           ))}
         </div>
-        <div className="flex flex-col gap-1 pl-4 pr-4 ">
-          {projectItems.map((item) => (
-            <NavItem
-              href={"/project"}
-              label={item}
-              icon={<HomeIcon />}
-              key={item}
-              onClick={handleClickLink}
-            />
-          ))}
-        </div>
+        <Separator />
+        <ScrollArea>
+          <div className="flex flex-1 flex-col gap-1 pl-4 pr-4">
+            {projectItems.map((item) => (
+              <NavItem
+                href={"/project"}
+                label={item}
+                icon={<HomeIcon />}
+                key={item}
+                onClick={handleClickLink}
+              />
+            ))}
+          </div>
+        </ScrollArea>
       </div>
-      <div className="flex flex-col gap-6 pb-6">
-        <div className="flex flex-col gap-1 self-stretch border-t pl-4 pr-4 pt-6">
+      <Separator />
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-1 self-stretch pl-4 pr-4">
           {bottomItems.map((item) => (
             <NavItem
               href={item.href}
@@ -79,7 +94,8 @@ export default function SideBar({ handleClickLink }: SideBarProps) {
             />
           ))}
         </div>
-        <div className="flex items-center gap-4 border-t pl-4 pr-4 pt-6">
+        <Separator />
+        <div className="flex items-center gap-4 pl-4 pr-4">
           <Avatar>
             <AvatarImage
               src="https://knotch.com/wp-content/uploads/2023/03/Image.png"
@@ -93,7 +109,7 @@ export default function SideBar({ handleClickLink }: SideBarProps) {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
 

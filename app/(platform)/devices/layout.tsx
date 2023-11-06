@@ -22,9 +22,7 @@ export default function Layout({ children }: LayoutProps) {
         </HeaderContent>
         <NewDeviceDialog />
       </Header>
-      <MainContainer className="max-w-full overflow-auto">
-        {children}
-      </MainContainer>
+      <MainContainer>{children}</MainContainer>
     </>
   );
 }

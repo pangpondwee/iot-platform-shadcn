@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      maxWidth: {
+        screen: ["100vw", "100dvw"],
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
