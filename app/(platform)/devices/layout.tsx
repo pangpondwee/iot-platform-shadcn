@@ -1,5 +1,5 @@
-import Header from "../_components/header";
-import { NewDeviceDialog } from "./_components/new-device-dialog";
+import Header from "../../../components/organisms/header";
+import { NewDeviceDialog } from "../../../components/dialogs/new-device-dialog";
 
 type LayoutProps = {
   children: React.ReactNode;

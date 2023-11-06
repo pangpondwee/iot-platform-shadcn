@@ -1,5 +1,5 @@
-import SignInForm from "./_components/sign-in-form";
-import Logo from "@/components/logo";
+import SignInForm from "../../../components/forms/sign-in-form";
+import Logo from "@/components/atoms/logo";
 
 export default function Home() {
   return (

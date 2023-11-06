@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import Header from "../_components/header";
-import { NewProjectDialog } from "./_components/new-project-dialog";
+import Header from "../../../components/organisms/header";
+import { NewProjectDialog } from "../../../components/dialogs/new-project-dialog";
 import Loading from "./loading";
 
 type LayoutProps = {

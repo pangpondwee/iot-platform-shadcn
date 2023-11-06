@@ -1,2 +1,2 @@
-- Fix bug NextTheme
+- Fix bug NextTheme https://github.com/shadcn-ui/ui/issues/1858
 - Fix warning geist variable

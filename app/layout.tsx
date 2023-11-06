@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Inter } from "next/font/google";
 import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/provider/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import QueryClientProvider from "@/components/query-client-provider";
+import QueryClientProvider from "@/components/provider/query-client-provider";
 
 const instrument_sans = Instrument_Sans({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });

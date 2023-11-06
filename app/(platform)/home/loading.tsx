@@ -1,4 +1,4 @@
-import ProjectCard from "./_components/project-card";
+import ProjectCard from "../../../components/molecules/project-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const skeletonCount = 3;

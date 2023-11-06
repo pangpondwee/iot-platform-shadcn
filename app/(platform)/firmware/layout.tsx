@@ -1,4 +1,4 @@
-import Header from "../_components/header";
+import Header from "../../../components/organisms/header";
 
 type LayoutProps = {
   children: React.ReactNode;

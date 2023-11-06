@@ -1,7 +1,7 @@
 "use client";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/logo";
+import Logo from "@/components/atoms/logo";
 import Link from "next/link";
 import {
   ArchiveIcon,

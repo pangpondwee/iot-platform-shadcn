@@ -7,8 +7,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Input, SearchInput } from "@/components/ui/input";
-import { ActionDropDown } from "./_components/action-dropdown";
-import { DeviceTypeDropDown } from "./_components/device-type-dropdown";
+import { ActionDropDown } from "../../../components/molecules/device-action-dropdown";
+import { DeviceTypeDropDown } from "../../../components/molecules/device-type-dropdown";
 
 const invoices = [
   {

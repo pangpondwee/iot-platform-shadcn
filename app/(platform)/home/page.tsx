@@ -1,8 +1,8 @@
 "use client";
 import { SearchInput } from "@/components/ui/input";
-import { SortDropDown } from "./_components/sort-dropdown";
+import { SortDropDown } from "../../../components/molecules/project-sort-dropdown";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import ProjectCard from "./_components/project-card";
+import ProjectCard from "../../../components/molecules/project-card";
 import { fetchProject, mockApi } from "@/app/_api/fetchProject";
 
 type project = {
