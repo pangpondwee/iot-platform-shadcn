@@ -1,4 +1,4 @@
-import ProjectCard from "./project-card";
+import ProjectCard from "./_components/project-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const skeletonCount = 3;
@@ -7,7 +7,7 @@ const loadingSkeletons = Array.from(
   (_, index) => index + 1,
 );
 
-export default function HomeSkeleton() {
+export default function Loading() {
   return (
     <main className="flex flex-col gap-4 p-4 sm:gap-6 sm:p-6">
       <div className="flex justify-between gap-3">

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import Header from "../_components/header";
 import { NewProjectDialog } from "./_components/new-project-dialog";
-import HomeSkeleton from "./_components/home-skeleton";
+import Loading from "./loading";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         <NewProjectDialog />
       </Header>
-      <Suspense fallback={<HomeSkeleton />}>{children}</Suspense>
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </div>
   );
 }
