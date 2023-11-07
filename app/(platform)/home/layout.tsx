@@ -28,3 +28,5 @@ export default function Layout({ children }: LayoutProps) {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";

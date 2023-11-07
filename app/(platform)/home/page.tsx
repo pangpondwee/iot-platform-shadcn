@@ -13,7 +13,6 @@ type project = {
 
 export default async function Home() {
   const data = await fetchProject();
-  console.log(data);
   return (
     <>
       <div className="flex justify-between gap-3">
