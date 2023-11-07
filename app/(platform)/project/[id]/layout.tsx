@@ -13,14 +13,18 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Header>
+      <Header className="pb-0 sm:pb-0">
         <HeaderContent>
           <HeaderTitle>Projects</HeaderTitle>
           <HeaderDescription>This is a mock project.</HeaderDescription>
           <Tabs>
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="account">Account</TabsTrigger>
-              <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsList variant="outline" className="grid w-full grid-cols-2">
+              <TabsTrigger variant="outline" value="account">
+                Account
+              </TabsTrigger>
+              <TabsTrigger variant="outline" value="password">
+                Password
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </HeaderContent>
