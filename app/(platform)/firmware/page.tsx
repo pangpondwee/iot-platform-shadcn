@@ -72,9 +72,9 @@ const invoices = [
   },
 ];
 
-export default function Devices() {
+export default function Firmware() {
   return (
-    <div className="overflow-hidden rounded-lg border">
+    <div className="rounded-lg border">
       <div className="border-b p-3">
         <Input placeholder="Search by device name" />
       </div>
