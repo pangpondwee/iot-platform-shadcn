@@ -1,4 +1,3 @@
-"use client";
 import { SearchInput } from "@/components/ui/input";
 import { SortDropDown } from "../../../components/molecules/project-sort-dropdown";
 import ProjectCard from "../../../components/molecules/project-card";
