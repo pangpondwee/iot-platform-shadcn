@@ -1,2 +1,8 @@
 - Fix bug NextTheme https://github.com/shadcn-ui/ui/issues/1858
 - Fix warning geist variable
+- แก้ fetch เป็น serverside หมด
+- animate tabs สร้าง div เปล่าแล้ว animate
+- ลองใช้ form mode การ validation
+- data table ใช้ server fetch ได้ ใช้ search params
+- nanoid generate key
+- ลอง trpc
