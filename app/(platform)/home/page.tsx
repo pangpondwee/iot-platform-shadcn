@@ -1,9 +1,8 @@
 "use client";
 import { SearchInput } from "@/components/ui/input";
 import { SortDropDown } from "../../../components/molecules/project-sort-dropdown";
-import { useSuspenseQuery } from "@tanstack/react-query";
 import ProjectCard from "../../../components/molecules/project-card";
-import { fetchProject, mockApi } from "@/app/_api/fetchProject";
+import { fetchProject } from "@/app/_api/fetchProject";
 
 type project = {
   _id: string;
@@ -13,11 +12,9 @@ type project = {
   imgUrl: string;
 };
 
-export default function Home() {
-  const { data: projectData } = useSuspenseQuery({
-    queryKey: ["projectData"],
-    queryFn: mockApi,
-  });
+export default async function Home() {
+  const data = await fetchProject();
+  console.log(data);
   return (
     <>
       <div className="flex justify-between gap-3">
@@ -28,7 +25,7 @@ export default function Home() {
         <SortDropDown />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {(projectData as project[]).map((project) => (
+        {(data as project[]).map((project) => (
           <ProjectCard
             key={project._id}
             title={project.name}
